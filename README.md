@@ -3,4 +3,4 @@
 # If there are any problems type to me and i will take this down
 
 
-# See youu guys, and enjoy ;))
+# See youu guys, enjoy ;))
