@@ -31,7 +31,7 @@ local Cooldown = false
 
 
 --- Time Until Next Check
-local Time = 1 -- Default Set to 1, | Issues | - | Too fast timer , break teleport sistem |
+local Time = 0.5 -- Default Set to 1, | Issues | - | Too fast timer , break teleport sistem |
 ---
 
 
