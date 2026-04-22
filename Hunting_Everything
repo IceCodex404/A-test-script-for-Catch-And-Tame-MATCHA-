@@ -1,0 +1,190 @@
+----------- Script made by HUNTER
+----------- To stop the script press P, to force stop script press restart in matcha executor
+----------- Islands
+while not iskeypressed or not keypress or not keyrelease or not notify do wait(0.5) end
+local Sky_Island_Pets = game.Workspace.SkyIslandPets.Pets
+-------------------
+local Water_Island_Pets = game.Workspace.WaterIslandPets.Pets
+-------------------
+local Bee_Island_Pets = game.Workspace.BeeIslandPets.Pets
+-------------------
+local Roaming_Pets = game.Workspace.RoamingPets.Pets
+-------------------
+local Ice_Island_Pets = game.Workspace.IceIslandPets.Pets
+-------------------
+local Galaxy_Island_Pets = game.Workspace.GalaxyIslandPets.Pets
+-------------------
+local NewEvent_Island_Pets = game.Workspace.NewEventIslandPets.Pets -- Temporary
+-------------------
+local Player = game.Players.LocalPlayer
+local Char = Player.Character
+---------- Choose a power level / how much money per second mob you need to find
+---------- Be careful if you put tooo much power its a chance that there is no mob with that much power at lvl 0 in mythich
+local Power_Point = 0
+----- Check for the functions
+while not iskeypressed or not keypress or not keyrelease or not notify do wait(0.5) end
+--- Switch
+local IsOn = false
+local Key = 0x50 -- P
+local Cooldown = false
+
+
+
+--- Time Until Next Check
+local Time = 1 -- Default Set to 1, | Issues | - | Too fast timer , break teleport sistem |
+---
+
+
+
+--- Debug
+print("Started")
+
+local function Main_Executor(Rarity, Power, Pet_Model)
+    if Rarity == "Mythical" and Power >= Power_Point and Pet_Model:IsA("Model") then
+        print(Power)
+        print(tostring(Power_Point) .. " " .. "Max Power Search")
+        repeat
+            task.wait(Time)
+            if not IsOn then
+                break
+            end                    
+            local Pet = Pet_Model.PrimaryPart
+            if Pet then
+                Char:FindFirstChild("HumanoidRootPart").Position = Pet.Position + Vector3.new(0, 5, 0)
+                keypress(0x31)
+                wait(0.025)
+                keyrelease(0x31)
+                wait(0.2)
+                mouse1press()
+                wait(0.025)
+                mouse1release()
+            end
+        until Pet_Model.Parent == nil
+    elseif Rarity == "Divine" and Pet_Model:IsA("Model") then
+        print(Power)
+        print(tostring(Power_Point) .. " " .. "Max Power Search")
+        repeat
+            task.wait(Time)
+            if not IsOn then
+                break
+            end
+            local Pet = Pet_Model.PrimaryPart
+            if Pet then
+                Char:FindFirstChild("HumanoidRootPart").Position = Pet.Position + Vector3.new(0, 5, 0)
+                keypress(0x31)
+                wait(0.025)
+                keyrelease(0x31)
+                wait(0.2)
+                mouse1press()
+                wait(0.025)
+                mouse1release()
+            end
+        until Pet_Model.Parent == nil
+    elseif Rarity == "Secret" and Pet_Model:IsA("Model") then
+        print(Power)
+        print(tostring(Power_Point) .. " " .. "Max Power Search")
+        repeat
+            task.wait(Time)
+            if not IsOn then
+                break
+            end
+            local Pet = Pet_Model.PrimaryPart
+            if Pet then
+                Char:FindFirstChild("HumanoidRootPart").Position = Pet.Position + Vector3.new(0, 5, 0)
+                keypress(0x31)
+                wait(0.025)
+                keyrelease(0x31)
+                wait(0.2)
+                mouse1press()
+                wait(0.025)
+                mouse1release()
+            end
+        until Pet_Model.Parent == nil
+    end
+end 
+
+-- The function to get the mobs
+
+local function StartFarm()
+    while IsOn do
+        -- Start
+        wait(0.05)
+        for _, Rarity in ipairs(Sky_Island_Pets:GetChildren()) do
+            Main_Executor(Rarity:GetAttribute("Rarity"), Rarity:GetAttribute("RPS"), Rarity)
+        end
+        --
+        for _, Rarity in ipairs(Water_Island_Pets:GetChildren()) do
+            Main_Executor(Rarity:GetAttribute("Rarity"), Rarity:GetAttribute("RPS"), Rarity)
+        end
+        --
+        for _, Rarity in ipairs(Bee_Island_Pets:GetChildren()) do
+            Main_Executor(Rarity:GetAttribute("Rarity"), Rarity:GetAttribute("RPS"), Rarity)
+        end
+            --
+        for _, Rarity in ipairs(Roaming_Pets:GetChildren()) do
+            Main_Executor(Rarity:GetAttribute("Rarity"), Rarity:GetAttribute("RPS"), Rarity)
+        end
+        --
+        for _, Rarity in ipairs(Ice_Island_Pets:GetChildren()) do
+            Main_Executor(Rarity:GetAttribute("Rarity"), Rarity:GetAttribute("RPS"), Rarity)
+        end
+        --
+        for _, Rarity in ipairs(Galaxy_Island_Pets:GetChildren()) do
+            Main_Executor(Rarity:GetAttribute("Rarity"), Rarity:GetAttribute("RPS"), Rarity)
+        end
+        -- Temp Event
+        if NewEvent_Island_Pets then
+            for _, Rarity in ipairs(NewEvent_Island_Pets:GetChildren()) do
+                Main_Executor(Rarity:GetAttribute("Rarity"), Rarity:GetAttribute("RPS"), Rarity)
+            end        
+        end
+        -- End
+    end
+end
+
+-- Detecting when you press P
+task.spawn(function()
+    while true do
+        wait(0.05)
+        local IsKeyCode = iskeypressed(Key)
+        if IsKeyCode then
+            if IsOn == false and Cooldown == false then
+                Cooldown = true
+                IsOn = true
+                print("Last Switch -- On")
+                notify("Its on now :)", 5)
+                wait(5)
+                Cooldown = false
+                continue
+            elseif IsOn == true and Cooldown == false then
+                Cooldown = true
+                IsOn = false
+                print("Last Switch -- Off")
+                notify("Terminated", 5)
+                wait(5)
+                Cooldown = false
+                continue
+            end
+            print(Switch)
+        end
+    end
+end)
+
+-- The Control Panel Who Execute Everything
+task.spawn(function()
+    while true do
+        wait(1)
+        if IsOn == false then
+            continue
+        end
+        StartFarm()
+    end
+end)
+
+-- Just in case SetRobloxInput every 0.6 second
+task.spawn(function()
+    wait(0.6)
+    setrobloxinput(true)
+end)
+
+notify("Script Loaded", 5)
