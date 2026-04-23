@@ -56,7 +56,7 @@ local function Main_Executor(Rarity, Power, Pet_Model)
                 keyrelease(0x31)
                 wait(0.2)
                 mouse1press()
-                wait(0.05)
+                wait(0.025)
                 mouse1release()
             end
         until Pet_Model.Parent == nil
@@ -76,7 +76,7 @@ local function Main_Executor(Rarity, Power, Pet_Model)
                 keyrelease(0x31)
                 wait(0.2)
                 mouse1press()
-                wait(0.05)
+                wait(0.025)
                 mouse1release()
             end
         until Pet_Model.Parent == nil
@@ -96,7 +96,7 @@ local function Main_Executor(Rarity, Power, Pet_Model)
                 keyrelease(0x31)
                 wait(0.2)
                 mouse1press()
-                wait(0.05)
+                wait(0.025)
                 mouse1release()
             end
         until Pet_Model.Parent == nil
@@ -116,7 +116,7 @@ local function Main_Executor(Rarity, Power, Pet_Model)
                 keyrelease(0x31)
                 wait(0.2)
                 mouse1press()
-                wait(0.05)
+                wait(0.025)
                 mouse1release()
             end
         until Pet_Model.Parent == nil        
