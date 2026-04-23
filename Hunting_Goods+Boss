@@ -20,7 +20,7 @@ local Player = game.Players.LocalPlayer
 local Char = Player.Character
 ---------- Choose a power level / how much money per second mob you need to find
 ---------- Be careful if you put tooo much power its a chance that there is no mob with that much power at lvl 0 in mythich
-local Power_Point = 5
+local Power_Point = 10497
 ----- Check for the functions
 while not iskeypressed or not keypress or not keyrelease or not notify do wait(0.5) end
 --- Switch
@@ -55,8 +55,9 @@ local function Main_Executor(Rarity, Power, Pet_Model)
                 wait(0.025)
                 keyrelease(0x31)
                 wait(0.2)
-                mouse1click()
-                wait(0.025)
+                mouse1press()
+                wait(0.05)
+                mouse1release()
             end
         until Pet_Model.Parent == nil
     elseif Rarity == "Divine" and Pet_Model:IsA("Model") then
@@ -74,8 +75,9 @@ local function Main_Executor(Rarity, Power, Pet_Model)
                 wait(0.025)
                 keyrelease(0x31)
                 wait(0.2)
-                mouse1click()
-                wait(0.025)
+                mouse1press()
+                wait(0.05)
+                mouse1release()
             end
         until Pet_Model.Parent == nil
     elseif Rarity == "Secret" and Pet_Model:IsA("Model") then
@@ -93,8 +95,9 @@ local function Main_Executor(Rarity, Power, Pet_Model)
                 wait(0.025)
                 keyrelease(0x31)
                 wait(0.2)
-                mouse1click()
-                wait(0.025)
+                mouse1press()
+                wait(0.05)
+                mouse1release()
             end
         until Pet_Model.Parent == nil
     elseif Rarity == "Boss" and Pet_Model:IsA("Model") then
@@ -112,8 +115,9 @@ local function Main_Executor(Rarity, Power, Pet_Model)
                 wait(0.025)
                 keyrelease(0x31)
                 wait(0.2)
-                mouse1click()
-                wait(0.025)
+                mouse1press()
+                wait(0.05)
+                mouse1release()
             end
         until Pet_Model.Parent == nil        
     end
