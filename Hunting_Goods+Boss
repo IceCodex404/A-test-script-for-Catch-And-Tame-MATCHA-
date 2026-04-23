@@ -20,7 +20,7 @@ local Player = game.Players.LocalPlayer
 local Char = Player.Character
 ---------- Choose a power level / how much money per second mob you need to find
 ---------- Be careful if you put tooo much power its a chance that there is no mob with that much power at lvl 0 in mythich
-local Power_Point = 5
+local Power_Point = 10497
 ----- Check for the functions
 while not iskeypressed or not keypress or not keyrelease or not notify do wait(0.5) end
 --- Switch
@@ -31,7 +31,7 @@ local Cooldown = false
 
 
 --- Time Until Next Check
-local Time = 1 -- Default Set to 1, | Issues | - | Too fast timer , break teleport sistem |
+local Time = 0.7 -- Default Set to 1, | Issues | - | Too fast timer , break teleport sistem |
 ---
 
 
@@ -51,12 +51,10 @@ local function Main_Executor(Rarity, Power, Pet_Model)
             local Pet = Pet_Model.PrimaryPart
             if Pet then
                 Char:FindFirstChild("HumanoidRootPart").Position = Pet.Position + Vector3.new(0, 5, 0)
-                keypress(0x31)
-                wait(0.025)
+                repeat keypress(0x31) until iskeypressed(0x31)
                 keyrelease(0x31)
-                wait(0.5)
-                mouse1press()
-                wait(0.025)
+                wait(0.2)
+                repeat mouse1press() until ismouse1pressed()
                 mouse1release()
             end
         until Pet_Model.Parent == nil
@@ -71,12 +69,10 @@ local function Main_Executor(Rarity, Power, Pet_Model)
             local Pet = Pet_Model.PrimaryPart
             if Pet then
                 Char:FindFirstChild("HumanoidRootPart").Position = Pet.Position + Vector3.new(0, 5, 0)
-                keypress(0x31)
-                wait(0.025)
+                repeat keypress(0x31) until iskeypressed(0x31)
                 keyrelease(0x31)
-                wait(0.5)
-                mouse1press()
-                wait(0.025)
+                wait(0.2)
+                repeat mouse1press() until ismouse1pressed()
                 mouse1release()
             end
         until Pet_Model.Parent == nil
@@ -91,12 +87,10 @@ local function Main_Executor(Rarity, Power, Pet_Model)
             local Pet = Pet_Model.PrimaryPart
             if Pet then
                 Char:FindFirstChild("HumanoidRootPart").Position = Pet.Position + Vector3.new(0, 5, 0)
-                keypress(0x31)
-                wait(0.025)
+                repeat keypress(0x31) until iskeypressed(0x31)
                 keyrelease(0x31)
-                wait(0.5)
-                mouse1press()
-                wait(0.025)
+                wait(0.2)
+                repeat mouse1press() until ismouse1pressed()
                 mouse1release()
             end
         until Pet_Model.Parent == nil
@@ -111,12 +105,10 @@ local function Main_Executor(Rarity, Power, Pet_Model)
             local Pet = Pet_Model.PrimaryPart
             if Pet then
                 Char:FindFirstChild("HumanoidRootPart").Position = Pet.Position + Vector3.new(0, 5, 0)
-                keypress(0x31)
-                wait(0.025)
+                repeat keypress(0x31) until iskeypressed(0x31)
                 keyrelease(0x31)
-                wait(0.5)
-                mouse1press()
-                wait(0.025)
+                wait(0.2)
+                repeat mouse1press() until ismouse1pressed()
                 mouse1release()
             end
         until Pet_Model.Parent == nil        
