@@ -55,9 +55,8 @@ local function Main_Executor(Rarity, Power, Pet_Model)
                 wait(0.025)
                 keyrelease(0x31)
                 wait(0.2)
-                mouse1press()
+                mouse1click()
                 wait(0.025)
-                mouse1release()
             end
         until Pet_Model.Parent == nil
     elseif Rarity == "Divine" and Pet_Model:IsA("Model") then
@@ -75,9 +74,8 @@ local function Main_Executor(Rarity, Power, Pet_Model)
                 wait(0.025)
                 keyrelease(0x31)
                 wait(0.2)
-                mouse1press()
+                mouse1click()
                 wait(0.025)
-                mouse1release()
             end
         until Pet_Model.Parent == nil
     elseif Rarity == "Secret" and Pet_Model:IsA("Model") then
@@ -95,9 +93,8 @@ local function Main_Executor(Rarity, Power, Pet_Model)
                 wait(0.025)
                 keyrelease(0x31)
                 wait(0.2)
-                mouse1press()
+                mouse1click()
                 wait(0.025)
-                mouse1release()
             end
         until Pet_Model.Parent == nil
     elseif Rarity == "Boss" and Pet_Model:IsA("Model") then
@@ -115,9 +112,8 @@ local function Main_Executor(Rarity, Power, Pet_Model)
                 wait(0.025)
                 keyrelease(0x31)
                 wait(0.2)
-                mouse1press()
+                mouse1click()
                 wait(0.025)
-                mouse1release()
             end
         until Pet_Model.Parent == nil        
     end
