@@ -20,7 +20,7 @@ local Player = game.Players.LocalPlayer
 local Char = Player.Character
 ---------- Choose a power level / how much money per second mob you need to find
 ---------- Be careful if you put tooo much power its a chance that there is no mob with that much power at lvl 0 in mythich
-local Power_Point = 10497
+local Power_Point = 5
 ----- Check for the functions
 while not iskeypressed or not keypress or not keyrelease or not notify do wait(0.5) end
 --- Switch
