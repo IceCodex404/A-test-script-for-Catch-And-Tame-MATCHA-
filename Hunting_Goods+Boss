@@ -16,6 +16,12 @@ local Galaxy_Island_Pets = game.Workspace.GalaxyIslandPets.Pets
 -------------------
 local NewEvent_Island_Pets = game.Workspace.NewEventIslandPets.Pets -- Temporary
 -------------------
+local Safari_Island_Pets = game.Workspace.SafariIslandPets.Pets -- New
+-------------------
+local Cave_Island_Pets = game.Workspace.CaveIslandPets.Pets -- New
+-------------------
+local Deep_Cave_Pets = game.Workspace.DeepCavePets.Pets -- New
+-------------------
 local Player = game.Players.LocalPlayer
 local Char = Player.Character
 ---------- Choose a power level / how much money per second mob you need to find
@@ -149,6 +155,18 @@ local function StartFarm()
             for _, Rarity in ipairs(NewEvent_Island_Pets:GetChildren()) do
                 Main_Executor(Rarity:GetAttribute("Rarity"), Rarity:GetAttribute("RPS"), Rarity)
             end        
+        end
+        -- New Safari Island
+        for _, Rarity in ipairs(Safari_Island_Pets:GetChildren()) do
+            Main_Executor(Rarity:GetAttribute("Rarity"), Rarity:GetAttribute("RPS"), Rarity)
+        end
+        -- New Cave Island
+        for _, Rarity in ipairs(Cave_Island_Pets:GetChildren()) do
+            Main_Executor(Rarity:GetAttribute("Rarity"), Rarity:GetAttribute("RPS"), Rarity)
+        end
+        -- New Deep Cave
+        for _, Rarity in ipairs(Deep_Cave_Pets:GetChildren()) do
+            Main_Executor(Rarity:GetAttribute("Rarity"), Rarity:GetAttribute("RPS"), Rarity)
         end
         -- End
     end
